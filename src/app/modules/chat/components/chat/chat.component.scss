@@ -5,19 +5,24 @@
     .contacts {
         width: 300px;
         min-width: 300px;
-        background-color: rgb(175, 167, 187);
+        background-color: white;
     }
     .chat {
-        width: 100%;
+        box-sizing: border-box;
         height: 100%;
         position: relative;
         flex-direction: column;
+        background-color: rgba(204, 189, 189, 0.89);
+        width: 100%;
         .messages {
-            padding: 1rem;
+            padding: 1rem 5%;
             overflow-y: auto;
             flex-grow: 1;
-        }
-        app-send {
+            flex-direction: column-reverse;
+            width: 100%;
+            app-message:last-child {
+                padding-top: 15px;
+            }
         }
     }
 }

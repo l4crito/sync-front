@@ -1,9 +1,11 @@
-<div class="container flex mat-elevation-z1">
-    <div class="contacts">
+<div class="container flex ">
+    <div class="contacts mat-elevation-z1">
+        <app-user-chat *ngFor="let user of userProvider.users" [user]="user" (click)="setCurrentChat(user)">
+        </app-user-chat>
     </div>
 
-    <div class="chat flex">
-        <div class="messages">
+    <div class="chat flex mat-elevation-z1" *ngIf="userProvider.currentChat">
+        <div class="messages flex">
             <app-message *ngFor="let message of messageService.messages" [message]="message"></app-message>
         </div>
         <app-send (send)="sendMessage($event)"></app-send>

@@ -1,0 +1,24 @@
+.container {
+    cursor: pointer;
+    padding: 10px;
+
+    .photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+    .name {
+        flex-grow: 1;
+    }
+    .last-update {
+        color: lightgray;
+        font-size: 0.7rem;
+        margin-left: 10px;
+    }
+}
+
+.selected {
+    background-color: rgba(211, 211, 211, 0.404);
+}

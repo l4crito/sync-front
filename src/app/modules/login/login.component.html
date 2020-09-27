@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="container center">
+    <form [formGroup]="form" (ngSubmit)="join()" class="form mat-elevation-z2 center">
+        <h3>Ingresar al chat</h3>
+        <img [src]="form.controls.photo.value" alt=" ">
+        <input placeholder="photo" type="text" formControlName="photo">
+        <input placeholder="usuario" type="text" formControlName="name">
+        <button mat-button type="submit" [disabled]="form.invalid">Acceder</button>
+        <div class="error" *ngIf="error">{{error}}</div>
+    </form>
+</div>

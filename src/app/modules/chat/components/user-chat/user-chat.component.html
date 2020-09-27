@@ -1,0 +1,5 @@
+<div class="container between" matRipple [ngClass]="{'selected':userProvider.currentChat?.name===user.name}">
+    <img [src]="user.photo" alt="" class="photo">
+    <div class="name">{{user.name}}</div>
+    <div class="last-update">{{user.lastUpdate |date:'shortTime'}}</div>
+</div>

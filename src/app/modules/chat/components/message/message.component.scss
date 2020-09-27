@@ -1,35 +1,41 @@
 .container {
-    padding: 0 0 1rem;
+    flex-grow: 1;
     .message {
         padding: 8px;
         background-color: white;
-        min-width: 150px;
         min-height: 20px;
         width: fit-content;
         border-radius: 10px;
         max-width: 50%;
+        margin: 0 0 2px;
+        overflow: hidden;
 
         .msg {
             color: black;
             height: auto;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            overflow: hidden;
         }
         .date {
-            height: 100% !important;
-            color: lightgray;
+            color: rgb(70, 68, 68);
             font-size: 0.7rem;
             margin-left: 10px;
+            min-width: fit-content;
+            
         }
     }
 }
 
 .own {
     justify-content: flex-end;
-    .container {
-        .message {
-            padding: 5px;
-            background-color: rgb(139, 233, 167);
-            border-radius: 20px;
-            color: black;
+    .message {
+        background-color: rgba(174, 28, 241, 0.945);
+        .msg {
+            color: white;
+        }
+        .date {
+            color: white;
         }
     }
 }

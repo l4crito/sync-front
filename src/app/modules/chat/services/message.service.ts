@@ -1,16 +1,14 @@
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable, ɵConsole } from '@angular/core';
-import { MessageModel } from '../models/message.model';
+import { MessageModel } from '../../../models/message.model';
+import { UserProvider } from '../../../providers/user.provider';
 // Declare SockJS and Stomp
 declare var SockJS: any;
 declare var Stomp: any;
 @Injectable()
 export class MessageService {
-  constructor() {
+  constructor(private userProvider: UserProvider) {
     this.initializeWebSocketConnection();
   }
-  from = '0';
-  to = '122';
 
   public stompClient: any;
   public messages: MessageModel[] = [];
@@ -23,9 +21,9 @@ export class MessageService {
       that.stompClient.subscribe('/message', (message: any) => {
         if (message.body) {
           const msg: MessageModel = JSON.parse(message.body);
-          if (this.from === msg.to) {
+          if (this.userProvider.user.name === msg.to) {
             msg.own = false;
-            that.messages.push(msg);
+            that.messages.unshift(msg);
           }
         }
       });

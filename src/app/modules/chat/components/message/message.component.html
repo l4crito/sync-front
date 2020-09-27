@@ -1,6 +1,6 @@
-<div class="container start" [ngClass]="{own: message.own}">
-    <div class="message between">
-        <div class="msg start"> {{message.message}} </div>
+<div class="container flex" [ngClass]="{own: message.own}">
+    <div class="message between mat-elevation-z1">
+        <span class="msg start"> {{message.message}} </span>
         <div class="date">{{message.date|date :'shortTime'}}</div>
     </div>
 </div>
