@@ -13,7 +13,7 @@ export class MessageService {
   to = '122';
 
   public stompClient: any;
-  public msg = [];
+  public messages: MessageModel[] = [];
   initializeWebSocketConnection(): void {
     const serverUrl = 'http://localhost:8080/socket';
     const ws = new SockJS(serverUrl);
@@ -24,7 +24,8 @@ export class MessageService {
         if (message.body) {
           const msg: MessageModel = JSON.parse(message.body);
           if (this.from === msg.to) {
-            that.msg.push(msg.message);
+            msg.own = false;
+            that.messages.push(msg);
           }
         }
       });
