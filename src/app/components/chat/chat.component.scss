@@ -1,0 +1,22 @@
+.container {
+    width: 90vw;
+    height: 90vh;
+    background-color: #ededed;
+    .contacts {
+        width: 300px;
+        min-width: 300px;
+        background-color: rgb(175, 167, 187);
+    }
+    .mesages {
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+        app-send {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
