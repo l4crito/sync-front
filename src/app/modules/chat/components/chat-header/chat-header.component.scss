@@ -1,0 +1,24 @@
+.container {
+    background-color: #6441a5;
+    color: white;
+    .me {
+        width: 400px;
+        border-right: solid 1px rgba(255, 255, 255, 0.233);
+        padding: 10px;
+    }
+    .other {
+        padding: 10px;
+    }
+    .photo {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+    button {
+        mat-icon {
+            color: white;
+        }
+    }
+}

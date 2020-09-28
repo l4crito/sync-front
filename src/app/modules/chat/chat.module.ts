@@ -12,6 +12,8 @@ import { ChatComponent } from './components/chat/chat.component';
 import { MessageService } from './services/message.service';
 import { UserChatComponent } from './components/user-chat/user-chat.component';
 import { MatRippleModule } from '@angular/material/core';
+import { ChatHeaderComponent } from './components/chat-header/chat-header.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MatRippleModule } from '@angular/material/core';
     SendComponent,
     ChatComponent,
     MessageComponent,
-    UserChatComponent
+    UserChatComponent,
+    ChatHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { MatRippleModule } from '@angular/material/core';
     FormsModule,
     MatIconModule,
     MatButtonModule,
-    MatRippleModule
+    MatRippleModule,
+    MatMenuModule
   ],
   providers: [MessageService]
 })

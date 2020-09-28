@@ -19,6 +19,7 @@ export class MessageService {
     const that = this;
     this.stompClient.connect({}, () => {
       that.stompClient.subscribe('/message', (message: any) => {
+        console.log(message)
         if (message.body) {
           const msg: MessageModel = JSON.parse(message.body);
           if (this.userProvider.user.name === msg.to) {

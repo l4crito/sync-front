@@ -1,0 +1,17 @@
+<div class="container start">
+    <div class="me between">
+        <img [src]="userProvider.user?.photo" alt="" class="photo mat-elevation-z4">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+    <div class="other start" *ngIf="userProvider.currentChat">
+        <img [src]="userProvider.currentChat?.photo" alt="" class="photo mat-elevation-z4">
+        <div class="name">{{userProvider.currentChat?.name}}</div>
+    </div>
+</div>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="userService.exit()">
+        <span>Salir del chat</span>
+    </button>
+</mat-menu>

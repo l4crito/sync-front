@@ -1,27 +1,36 @@
+@import "../../../../../variables.scss";
 .container {
     width: 90vw;
     height: 90vh;
     background-color: #ededed;
-    .contacts {
-        width: 300px;
-        min-width: 300px;
-        background-color: white;
+    flex-direction: column;
+    overflow: hidden;
+    app-chat-header {
+        flex-grow: 0;
     }
-    .chat {
-        box-sizing: border-box;
-        height: 100%;
-        position: relative;
-        flex-direction: column;
-        background-color: rgba(204, 189, 189, 0.89);
-        width: 100%;
-        .messages {
-            padding: 1rem 5%;
-            overflow-y: auto;
+    .conversation {
+        flex-grow: 1;
+        overflow: hidden;
+        .contacts {
+            width: $contacts;
+            min-width: $contacts;
+            background-color: white;
+        }
+        .chat {
             flex-grow: 1;
-            flex-direction: column-reverse;
+            box-sizing: border-box;
+            position: relative;
+            flex-direction: column;
+            background-color: rgba(204, 189, 189, 0.89);
             width: 100%;
-            app-message:last-child {
-                padding-top: 15px;
+            .messages {
+                height: 100%;
+                padding: 1rem 5%;
+                overflow-y: auto;
+                flex-direction: column-reverse;
+                app-message:last-child {
+                    padding-top: 15px;
+                }
             }
         }
     }

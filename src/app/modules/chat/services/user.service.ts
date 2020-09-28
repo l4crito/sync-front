@@ -33,6 +33,7 @@ export class UserService {
     this.httpClient.post(environment.apiUrl + '/user/exit', JSON.parse(localStorage.getItem('user')))
       .subscribe(() => {
         this.provider.user = null;
+        this.provider.users = [];
         this.router.navigate(['']);
       });
   }
